@@ -1,0 +1,51 @@
+// out: ../css/styles.css, compress: true, "autoprefix": "cover 99.5% in US"
+
+@colorBgOut:        #191918;
+@colorBg1:           #191918;
+@colorBg2:           #2c4b3c;
+@colorBg3:          #dddbdb;
+@colorBg4:          #fbfbfb;
+@colorBg5:           #9bb0a5;
+
+@color1:            #191918;
+@color2:            #e1e1e1;
+@color3:            #ce6b03;
+
+
+
+
+@max-width-site:        1270px;
+@padding-container:     30px;
+@cta-border-radious:    3px;
+
+@import "reset.less";
+@import "mixin.less";
+
+body {
+    color:              @color1;
+    background-color:   @colorBgOut;
+  }
+  p {
+      font-weight:      300;
+  }
+  b, strong {
+      font-weight:      400;
+  }
+.montserrat(@weightFont: 300) {
+    // <uniquifier>: Use a uniquifier for the class name
+// <weight>: Use a value from 100 to 900
+
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: @weightFont;
+    font-style: normal;
+}
+.animatedScaleBig {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.3); }
+}
+@keyframes animationScaleBig {
+    .animatedScaleBig;
+}
+@import "styles.less";
+@import "media.less";
