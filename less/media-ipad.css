@@ -1,0 +1,14 @@
+.section-service-1 .form-shape-img {
+  clip-path: polygon(34% 6%, 93% 18%, 94% 78%, 34% 98%, 0 50%);
+}
+.section-service-2 .form-shape-img {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+.section-service-3 .form-shape-img {
+  border-radius: 50%;
+  shape-outside: circle(50%);
+}
+.section-service-4 .form-shape-img {
+  border-radius: 50%;
+  shape-outside: circle(50%);
+}

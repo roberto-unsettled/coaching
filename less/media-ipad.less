@@ -1,45 +1,59 @@
-//main: globals.less
-
-.title-1 {
-    font-size:              82px;
-}
-
-.title-2 {
-    font-size:              19px;
-    line-height:            120%;
-}
-.title-3 {
-    font-size:              57px;
-    //margin-bottom:         (@padding-container/4);
-}
-
-.title-4 {
-    @lineDistance:                  34px;
-    &::after,
-    &::before {
-        top:                10px;
-    }
-    &::before{
-        left:                       @lineDistance;
-    }
-    &::after {
-        right:                      @lineDistance;
+.section-ethos {
+    background-image:               url('../img/triangle.svg');
+    .form-shape-img {
+        float:                        right;
     }
 }
+.form-shape-img {
+    @sizeImg:                       180px;
+    @marginImg:                     14px;
+    .size(@sizeImg, @sizeImg);
+    &.right {
+      margin:                       0 0 @marginImg @marginImg;
+      float:                        right;
+    }
+    &.left {
+      margin:                       0 @marginImg @marginImg 0;
+      float:                        left;
+    }
+  }//.form-shape-img
 
-.subtitle {
-    font-size:              16px;
-}
+.section-service-1 {
+    
+    .form-shape-img {
+      clip-path:                  polygon(34% 6%, 93% 18%, 94% 78%, 34% 98%, 0 50%);
+    }
+  } //.section-service-1
 
-.introduction-image{
-    padding:                0;
-}
-.full-section-container-2 {
-    background-position-x:  center;
-}
-.introduction-image-3 {
-    margin-bottom:          (@padding-container/4);
-}
-.big-mail {
-    font-size:              39px;
-}
+.section-service-2 {
+  
+  .title-h2 {
+    text-align:                   right;
+  }
+  .form-shape-img {
+    //clip-path: polygon(63% 0, 96% 34%, 85% 73%, 43% 93%, 0 51%, 15% 11%);
+    clip-path:                    polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  }
+} //.section-service-2
+
+.section-service-3 {
+  
+  .form-shape-img {
+    //clip-path: polygon(63% 0, 100% 59%, 45% 100%, 0 41%);
+    //clip-path:                    circle(50% at 50% 50%);
+    border-radius:                50%;
+    shape-outside:                circle(50%);
+  }
+} //.section-service-2
+
+.section-service-4 {
+  
+  .title-h2 {
+    text-align:                   right;
+  }
+  .form-shape-img {
+    //clip-path: polygon(63% 0, 100% 59%, 45% 100%, 0 41%);
+    border-radius:                50%;
+    shape-outside:                circle(50%);
+  }
+} //.section-service-4
