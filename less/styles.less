@@ -353,19 +353,19 @@ a {
 }
 
 .collapse a.FM {
-  background: #ffff00;
+  background: @colorBg3;
 }
 
 .collapse a.parkour {
-  background: #ec211d;
+  background: @colorBg5;
 }
 
 .collapse a.handstand {
-  background: #2aff00;
+  background: @colorBg3;
 }
 
 .collapse a.gorundwork {
-  background: #1406e2;
+  background: @colorBg5;
 }
 
 .collapse a:before {
@@ -381,6 +381,7 @@ a {
 .inner-content {
   padding: 1.8rem;
   color: @color1;
+  background-color: @colorBg4;
 }
 
 .content {
@@ -398,7 +399,7 @@ h3 {
 }
 
 .collapse:target .content {
-  max-height: 15em;
+  max-height: 20em;
 }
 
 .collapse:target a:before {
