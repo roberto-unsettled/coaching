@@ -1,53 +1,36 @@
-function toggleMenu(){
-  let menuContent = document.getElementById('menu');
-  let menuCall = document.getElementById('menu-call');
-      menuContent.classList.toggle('active');
-      menuCall.classList.toggle('active');
+function scrollToTargetAdjusted(target) {
+  const element = document.getElementById(target);
+  const headerOffset = 70; // Adjust this offset as needed
+  const elementPosition = element.getBoundingClientRect().top;
+  const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth"
+  });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  let menuCall = document.getElementById('menu-call');
-  //var menuContent = document.getElementById('menu');
-
-  menuCall.addEventListener('click', function() {
-      // menuContent.classList.toggle('active');
-      menuCall.classList.toggle('active');
-      toggleMenu();
+document.querySelectorAll('.menu-link').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    var target = this.getAttribute('href').substring(1);
+    scrollToTargetAdjusted(target);
   });
+});
+ 
+$(document).ready(function() {
+  // Hide all content by default
+  //$(".content").hide();
 
-  // Smooth scrolling function
-  function scrollToTargetAdjusted(target) {
-    //console.log(target);
-    let element = document.getElementById(target);
-    let headerOffset = 80;
-    let elementPosition = element.offsetTop;
-    let offsetPosition = elementPosition - headerOffset;
-console.log(target);
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-    // Detect when scrolling has finished
-    window.addEventListener('scroll', function() {
-      if (!toggleMenu || typeof toggleMenu !== 'function') return;
-      var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-      var targetPosition = elementPosition - headerOffset;
-      if (currentScroll === targetPosition) {
-        console.log('end');
-        toggleMenu();
-      }
-  });
+  // Toggle content visibility when an expandable menu is clicked
+  $(".expandable-menu").click(function() {
     
-  }
+      // Find the content associated with the clicked menu and toggle it
+      let idTarget = $(this).attr('data-idParent');
+      $(".collapse").removeClass('expand');
+      $('#'+idTarget).addClass('expand');
 
-  // Smooth scroll when clicking navigation links
-  document.querySelectorAll('.menu-link').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      var target = this.getAttribute('href').substring(1);
-      scrollToTargetAdjusted(target);
-    });
+      // Optionally close other open menus
+      //$(".content").not($(this).next(".content")).slideUp();
   });
-
-
 });
