@@ -34,3 +34,15 @@ $(document).ready(function() {
       //$(".content").not($(this).next(".content")).slideUp();
   });
 });
+
+
+$('.email-to-copy').on( "click tap",function() {
+  var copyText = 'roberto.unsettled@gmail.com';
+  navigator.clipboard.writeText(copyText);
+
+  $('#emailToCopy').addClass('copied');
+  setTimeout(function() {
+    $('#emailToCopy').removeClass('copied');
+   }, 2000);
+
+});

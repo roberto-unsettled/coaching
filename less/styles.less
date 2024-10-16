@@ -334,6 +334,7 @@ a {
 .collapse-content {
   width: 100%;
   margin: 14px 0;
+  display: inline-block;
   strong {
     font-weight: 600;
   }
@@ -399,7 +400,48 @@ a {
   border-top: 1px solid rgba(255, 255, 255, 0.7);
 }
 
-
-.collapse:target a:before {
-  transform: rotate(-90deg);
-}
+.big_mail{
+  display: block;
+  font-size: 85px;
+  line-height: 80px;
+  transform: scale(1, 1.6);
+  position: relative;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  &::before {
+      content: "copied! see you soon ;D";
+      display: block;
+         position: absolute;
+         top:0;
+         left: 0;
+         width: 100%;
+         height: 0%;
+         overflow: hidden;
+         font-size: 30px;
+         line-height: 80px;
+         text-align: center;
+      z-index: 0;
+      opacity: 0;
+      transition: all .4s;
+  }
+  &.copied{
+      &::before {
+         height: 90%;
+         opacity: 0.97;
+         z-index: 20;
+         background-color: @color1;
+      }
+  }
+  &::after {
+      content: "tap to copy";
+     display: block;
+     position: absolute;
+     bottom: 20px;
+     left: 0;
+     width: 100%;
+     height: 16px;
+     font-size: 12px;
+     opacity: 0.5;
+ }
+}//big_mail
