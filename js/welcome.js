@@ -40,9 +40,9 @@ $('.email-to-copy').on( "click tap",function() {
   var copyText = 'roberto.unsettled@gmail.com';
   navigator.clipboard.writeText(copyText);
 
-  $('#emailToCopy').addClass('copied');
+  $('#email-comfirmation').addClass('visible');
   setTimeout(function() {
-    $('#emailToCopy').removeClass('copied');
+    $('#email-comfirmation').removeClass('visible');
    }, 2000);
 
 });
