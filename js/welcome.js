@@ -19,8 +19,6 @@ document.querySelectorAll('.menu-link').forEach(anchor => {
 });
  
 $(document).ready(function() {
-  // Hide all content by default
-  //$(".content").hide();
 
   // Toggle content visibility when an expandable menu is clicked
   $(".expandable-menu").click(function() {
@@ -29,9 +27,6 @@ $(document).ready(function() {
       let idTarget = $(this).attr('data-idParent');
       $(".collapse").removeClass('expand');
       $('#'+idTarget).addClass('expand');
-
-      // Optionally close other open menus
-      //$(".content").not($(this).next(".content")).slideUp();
   });
 });
 
